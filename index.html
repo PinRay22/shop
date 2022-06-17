@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>靴を買う</title>
+    <style>
+        .shoe1{
+        display: inline-block;
+        margin-left: 3%;
+        margin-top: 5%;
+        padding: 25px;
+        vertical-align: top;
+        text-align: center;
+        height: 400px;
+        line-height: 30px;
+        background-image: url(asset/image/b2.jpg);
+        border-radius: 20px;
+        }
+        .picture{
+            width: 350px;
+            border-radius: 15px;
+        }
+        .hihi{
+            margin-top: 2%;
+        }
+        .banner1{
+            height: 730px;
+            width: 100%;
+            background-image: url(asset/image/banner12.jpg);
+            background-size: cover;
+            position: absolute;
+            z-index: -1;
+        }
+        .banner2{
+            height: 730px;
+            background-image: url(asset/image/banner.jpg);
+            background-size: cover;
+            position: relative;
+            z-index: 0;
+            transition: ease-in 1s;
+        }
+        .banner2:hover{
+            opacity: 0;
+        }
+        .chose{
+            margin-left: 10%  ;
+            margin-top: 2%;
+            width: 80%;
+            columns:2 ;
+        }
+
+
+        .chose_right{
+            display: inline-block;
+            margin-left: 5%;
+            margin-top: 15%;
+            margin-bottom: 15%;
+            padding: 15px;
+            width: 20%;
+            height:500px;
+            vertical-align: top;
+            text-align: center;
+            
+            line-height: 30px;
+            background-image: url(asset/image/b1.jpg);
+            border-radius: 20px;
+        
+        }
+        .top_title_box22{
+            height: 600px;
+            width: 100%;
+            background-image: url(asset/image/banner13.jpg);
+            background-size: cover;
+            position: absolute;
+            z-index: 1;
+        }
+        .top_title_box{
+            height: 600px;
+            background-image: url(asset/image/pexels-web-donut-19090.jpg);
+            background-size: cover;
+            position: relative;
+            z-index: 99;
+            transition: ease-in 1s;
+        }
+        .top_title_box:hover{
+            opacity: 0;
+            transition: 0.75s;
+        }
+
+        .top_title{
+            margin-top: 4%;
+            text-align: center;
+            font-family: "秀風體W3";
+            text-align: center;
+            color:#666;
+            position: absolute;
+            z-index: 100;
+            font-size: 200px;
+            font-weight: 100;
+            -webkit-text-stroke: 1px white;
+        transform: translate(68%,-450px);
+        }
+        .top_title_box2{
+            height: 600px;
+            width: 100%;
+            background-image: url(asset/image/top2.jpg);
+            background-size: cover;
+            position: absolute;
+            z-index: 1;
+        }
+        .top_title2{
+            margin-top: 4%;
+            text-align: center;
+            font-family: "秀風體W3";
+            text-align: center;
+            color:#7a6944;
+            position: absolute;
+            z-index: 100;
+            font-size: 200px;
+            font-weight: 500;
+            -webkit-text-stroke: 1px white;
+            transform: translate(68%,-450px);
+        }
+        .top_title_box4{
+            height: 600px;
+            width: 100%;
+            background-image: url(asset/image/top.jpg);
+            background-size: cover;
+            position: relative;
+            z-index: 99;
+            transition: ease-in 1s;
+        }
+        .top_title_box4:hover{
+            opacity: 0;
+            transition: 0.75s;
+        }
+        .hot_box{
+            margin-bottom: 20%;
+            padding: 20px;
+            height: auto;
+            border-radius: 20px;
+            border-color: grey;
+            border-width: 1px;
+        }
+        .hot_shoe{
+            
+            outline: 0px;
+            position: relative;
+            display: inline-block;
+            width: 19%;
+            margin-left: 3%;
+            margin-top: 10px;
+            padding: 1%;
+            vertical-align: top;
+            text-align: center;
+            height:auto;
+            background-image: url(asset/image/b4.jpg);
+            border-radius: 20px;
+        }
+        .hot_picture{
+            
+            width: 95%;
+            border-radius: 15px;
+            border:0px;
+        }
+
+
+
+
+        .chose_left{ 
+            position: absolute;
+            display: inline-block;
+            top:20px;
+            left: 0px;
+            cursor: default;
+            margin-left: 0%;
+            margin-top: 0%;
+            width: 100%;
+            height:740px;
+            background-image: url(/asset/image/b2.jpg);
+            border-radius: 20px;
+            border: 0px;
+            outline: 0px;
+            outline: transparent;
+            padding: 0;
+            
+        }
+
+
+        .slider_box{
+            cursor: default;
+            margin-left: 15%;
+            margin-top: 10%;
+            margin-bottom: 10%;
+            display: inline-block;
+            width: 800px;
+            height:800px;
+            position: relative;
+            overflow: hidden;
+            box-sizing: border-box;
+            
+            background-image: url(asset/image/b2.jpg);
+            background-size: cover;
+            border-radius: 20px;
+        }
+        .slider_box div{
+            left: 19px;
+            padding: 0;
+            position: relative;
+            display: block;
+            width: 760px;
+            height: 100%;
+            overflow: hidden;
+        }
+        .slider_box div div{
+            display: block;
+            padding: 0;
+            position: absolute;
+
+            top: 10;
+            left: -100%;;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            
+            -webkit-animation: repeat 25s linear infinite;
+                    animation:  repeat 25s linear infinite;
+        }
+
+        @-webkit-keyframes repeat {
+            0%{
+                opacity: 1;
+            }
+            4% {
+                opacity: 1;
+                filter: alpha(opacity=100);
+                left: 0%;
+            }
+            20% {
+                opacity: 1;
+                filter: alpha(opacity=100);
+                left: 0%;
+            }
+            24% {
+                opacity:1;
+                filter: alpha(opacity=0);
+                left: 100%;
+            }
+            26%{
+                opacity:0;
+                filter: alpha(opacity=0);
+                left: 100%;
+            }
+            28%{
+                opacity:0;
+                filter: alpha(opacity=0);
+                left: -100%;
+            }
+        }
+        @keyframes repeat {
+            0%{
+                opacity: 1;
+            }
+            4% {
+                opacity: 1;
+                filter: alpha(opacity=100);
+                left: 0%;
+            }
+            20% {
+                opacity: 1;
+                filter: alpha(opacity=100);
+                left: 0%;
+            }
+            24% {
+                opacity:1;
+                filter: alpha(opacity=0);
+                left: 100%;
+            }
+            26%{
+                opacity:0;
+                filter: alpha(opacity=0);
+                left: 100%;
+            }
+            28%{
+                opacity:0;
+                filter: alpha(opacity=0);
+                left: -100%;
+            }
+        }
+        .slider_box div div:nth-child(1) {
+            -webkit-animation-delay: 0s;
+                    animation-delay: 0s;
+        }
+        .slider_box div div:nth-child(2) {
+            -webkit-animation-delay: 5s;
+                    animation-delay: 5s;
+        }
+        .slider_box div div:nth-child(3) {
+            -webkit-animation-delay: 10s;
+                    animation-delay: 10s;
+        }
+        .slider_box div div:nth-child(4) {
+            -webkit-animation-delay: 15s;
+                    animation-delay: 15s;
+        }
+        .slider_box div div:nth-child(5) {
+            -webkit-animation-delay: 20s;
+                    animation-delay: 20s;
+        }
+
+
+    </style>
+    <link rel="stylesheet" type="text/css" href="./asset/css/3.css" />
+    <link rel="stylesheet" type="text/css" href="./asset/css/1.css" />
+    <link rel="stylesheet" type="text/css" href="./asset/css/login.css" />
+    <link rel="stylesheet" type="text/css" href="./asset/css/wrap_add.css" />
+    <link rel="stylesheet" type="text/css" href="./asset/js/sign.js" />
+</head>
+<body>
+    <header>
+
+        <div class="top">
+            <div class="ss22">
+                <div class="s2ch">
+                <img class="s2ch2" src="./asset/image/2ch.png">
+            </div>
+            
+                <form class="s22" action="search_result.jsp">
+                    <input class="s222" type="text" name="s2ch" placeholder="搜一下" >
+                </form>
+            </div>
+            <a href="index.html"><div class="solw">靴を買う</div></a>
+            <div class="man1">
+                <img class="log1" src="./asset/image/man2.png">
+            </div>
+                <form class='out' action='logout.jsp'>
+                <input  type=image class='out_input' name=sa src='asset/image/logout.png' >
+                </form>
+              
+            <div class="man">
+                <a href='member.html'><button class='login_show' style='cursor: pointer;' ><img class='log' src='./asset/image/man.png'></button></a>
+            </div>
+            <div class="car">
+                <a href='shoppingcar.html'><img class='log' src='./asset/image/c1.png'></a>
+            </div>
+            
+        </div>
+    </header>
+     <nav style='width:70%; margin-left: 15%;'>
+        <div class='menu'>
+            <ul>
+            <li class='menu1'>
+                <div class='dropdown'>
+                <button class='dropbtn'>常見問題</button>
+                <div class='dropdown-content'>
+                    <a href='qa.html'>Q&A</a>
+                    <a href='about.html'>小知識</a>
+                </div>
+            </div>
+        </li>
+        <li class='menu1'>
+            <a href='cclemon.html' style='text-decoration: none' class='menubtn'>關於我們</a>
+        </li>
+        <li class='menu1'>
+            <div class='dropdown'>
+                <a href='model.html'><button class='dropbtn' >商品分類</button></a>
+                <div class='dropdown-content'>
+                    <a href='model.html#skater'>板鞋<br></a>
+                    <a href='model.html#sneaker'>運動鞋</a>
+                    <a href='model.html#boots'>靴子<br></a>
+                    <a href='model.html#casual'>休閒鞋<br></a>
+                </div>
+            </div>
+        </li>
+        <li class='menu1'>
+            <a href='momber_form.html' style='text-decoration: none;' class='menubtn'>回饋表單</a>
+        </li>
+        
+    </ul>
+</div>
+</nav>
+    <!--     以上為HEADER        -->
+
+<div  id="login_box1" class="login_box">
+    <div   class="login_box1">
+
+    </div>
+    <div   class="login_box2">
+    <div class="QAZ" >
+        <div class="lp">
+            <div id="cont1">
+    
+                <div class="login">
+    
+                    <h1>登入</h1>
+    
+                    <form method="Get" action="check.jsp">
+                        <input type="text" id="uname" placeholder="帳號" required name="acct1">
+                        <div class="tab"></div>
+                        <input type="password" id="pass" placeholder="密碼" required name="pass1">
+                        <div class="tab"></div>
+                        <input type="submit" value="登入" class="submit" style="cursor: pointer;">
+                    </form>
+    
+                    <h3 onclick="show2()" style="cursor: pointer;">註冊帳號</h3>
+                    <h3 onclick="hide()()" style="cursor: pointer;">取消</h3>
+    
+                </div>
+            </div>
+        </div>
+        
+    
+        <div class="sp">
+            <div id="cont2">
+    
+                <div class="signup">
+    
+                    <h1>註冊</h1>
+    
+                    <form method="GET" action="sign_up.jsp">
+                        
+                        <input type="text" id="uname2" placeholder="帳號" required name="acct">
+                        <div class="tab"></div>
+                        <input type="password" id="pass2" placeholder="密碼" required name="pass">
+                        <div class="tab"></div>
+                        <input type="password" id="cpass" placeholder=" 確認密碼" required name="cpass" name="name4">
+                        <div class=" tab">
+                        </div>
+                        <input type="submit" value="註冊" class="submit" style="cursor: pointer;">
+                    </form>
+    
+                    <h3 onclick="show2()" style="cursor: pointer;">登入帳號</h3>
+                    <h3 onclick="hide()()" style="cursor: pointer;">取消</h3>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    </div>
+    
+</div>
+<!--     以上為登入畫面        -->
+
+    <div class="hihi">  
+    <div class="banner1"></div>
+    <div class="banner2"></div>
+
+    <div class="wrap_add">
+        <img src="asset/image/megaphone.png" width="80px">
+        <div class="cont_out_add">
+            <div class="cont_add">
+                <p class="cont_add_text">全館消費滿$5000折200!!!    新店開張，全館免運!!!</p>
+            </div>
+        </div>
+    </div>
+   
+    <div class="slider_box">
+        <div>
+            <div>
+                 <input type="image" class="chose_left" src="asset/image/s2.jpg" >
+            </div>
+            <div>
+                <input type="image" class="chose_left" src="asset/image/s3.jpg" >
+           </div>
+           <div>
+                <input type="image" class="chose_left" src="asset/image/s4.jpg" >
+             </div>
+            <div>
+                 <input type="image" class="chose_left" src="asset/image/s5.jpg" >
+            </div>
+            <div>
+                  <input type="image" class="chose_left" src="asset/image/s6.jpg" >
+            </div>
+        </div>
+    </div>
+    
+     <div class="chose_right">
+         <br>
+       <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我們的人生總是充滿意外
+        成為鞋槓青年會是你的好選擇
+        現在的人哪個不是有好幾雙鞋呢
+        人生在世最重要就是開心
+        鞋子為生活帶來不同的心情顏色 &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;每雙鞋都有自己的故事
+        等著我們撰寫一章章的故事
+        人生可能會後悔，但不要造成遺憾吧<br>
+        進來看看吧!
+        我們彼此都不知道我們會有什麼樣的體驗!<br>
+        </h1>
+       <p></p>
+    </div>
+        
+    
+       
+
+    <div class="hihi"> 
+    <div class='top_title_box22'></div>
+            <div class='top_title_box'></div> 
+            <p class='top_title'>熱門商品</p>
+            <div class="hot_box" >
+                <div class="hot_shoe">
+                   <form method="post" action="#">
+                       <input type="image" class="hot_picture" src="./asset/image/s1.jpg" >
+                       <p><div class="chocolate_word1">鞋1</div></p>
+                       <input type="hidden" name="id" value="1">
+                   </form>
+               </div>
+               <div class="hot_shoe">
+                   <form method="post" action="#">
+                       <input type="image" class="hot_picture" src="./asset/image/s1.jpg" >
+                       <p><div class="chocolate_word1">鞋1</div></p>
+                       <input type="hidden" name="id" value="1">
+                   </form>
+               </div>
+               <div class="hot_shoe">
+                   <form method="post" action="#">
+                       <input type="image" class="hot_picture" src="./asset/image/s1.jpg" >
+                       <p><div class="chocolate_word1">鞋1</div></p>
+                       <input type="hidden" name="id" value="1">
+                   </form>
+               </div>
+               <div class="hot_shoe">
+                   <form method="post" action="#">
+                       <input type="image" class="hot_picture" src="./asset/image/s1.jpg" >
+                       <p><div class="chocolate_word1">鞋1</div></p>
+                       <input type="hidden" name="id" value="1">
+                   </form>
+               </div>
+               
+            </div>
+    <div>
+        <div class='top_title_box2'></div>
+        <div class='top_title_box4'></div>
+        <p class='top_title2'>新品上架</p>
+    </div>
+    <div class="hot_box" >
+        <div class="hot_shoe">
+           <form method="post" action="#">
+               <input type="image" class="hot_picture" src="./asset/image/s1.jpg" >
+               <p><div class="chocolate_word1">鞋1</div></p>
+               <input type="hidden" name="id" value="1">
+           </form>
+       </div>
+       <div class="hot_shoe">
+           <form method="post" action="#">
+               <input type="image" class="hot_picture" src="./asset/image/s1.jpg" >
+               <p><div class="chocolate_word1">鞋1</div></p>
+               <input type="hidden" name="id" value="1">
+           </form>
+       </div>
+       <div class="hot_shoe">
+           <form method="post" action="#">
+               <input type="image" class="hot_picture" src="./asset/image/s1.jpg" >
+               <p><div class="chocolate_word1">鞋1</div></p>
+               <input type="hidden" name="id" value="1">
+           </form>
+       </div>
+    </div>
+<footer>
+    <p> MADE BY CHEN-PIN-JUI, WONG-HAO-SIANG<br>
+        沒有版權 愛怎麼抄就怎麼抄<br>
+    </p>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="./asset/js/sign.js"></script>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript"></script>
+</body>
+</html>
